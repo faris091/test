@@ -50,6 +50,7 @@ sudo chown -R kippo:kippo /var/run/kippo/
 sudo iptables -t nat -A PREROUTING -p tcp --dport 22 -j REDIRECT --to-port 2222
 sudo iptables-save > /etc/iptables.rules
 
+sudo echo '#!/bin/sh' >> /etc/network/if-up.d/iptablesload 
 
 sudo chmod +x /etc/network/if-up.d/iptablesload 
 

@@ -40,7 +40,8 @@ SENT EMAIL
 ---------------------
       ssmtp [receipent email]
 
-#INSTALLING KIPPO
+INSTALLING KIPPO
+---------------------
       wget -q https://raw.githubusercontent.com/faris091/Test/Kippo/Kippo/kippo.py -O /tmp/setup.bash && bash /tmp/setup.bash
 
 KIPPO

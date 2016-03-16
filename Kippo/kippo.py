@@ -1,3 +1,5 @@
+sudo wget https://raw.github.com/andrewmichaelsmith/honeypot-setup-script/master/scripts/iface-choice.py -O /tmp/iface-choice.py
+
 if [ -d "$script_dir" ];
 then
 	cp /honeypot-setup-script/templates/kippo.cfg.tmpl /tmp/kippo.cfg
@@ -22,8 +24,11 @@ then
 fi
 
 sudo apt-get update &> /dev/null
-sudo apt-get -y install python-pip python-twisted python-dev
+sudo apt-get -y install python-pip python-twisted python-dev iptables python-openssl
 sudo pip install netifaces
+
+python /tmp/iface-choice.py "$@"
+iface=$(<~/.honey_iface)
 
 sudo sed -i 's:Port 22:Port 65534:g' /etc/ssh/sshd_config
 sudo service ssh reload
@@ -44,6 +49,15 @@ sudo rm -rf /opt/kippo/log
 sudo chown -R kippo:kippo /opt/kippo/
 sudo chown -R kippo:kippo /var/kippo/
 sudo chown -R kippo:kippo /var/run/kippo/
+
+sudo iptables -t nat -A PREROUTING -p tcp --dport 22 -j REDIRECT --to-port 2222
+sudo iptables-save > /etc/iptables.rules
+
+sudo echo '#!/bin/sh' >> /etc/network/if-up.d/iptablesload 
+sudo echo 'iptables-restore < /etc/iptables.rules' >> /etc/network/if-up.d/iptablesload 
+sudo echo 'exit 0' >> /etc/network/if-up.d/iptablesload 
+
+sudo chmod +x /etc/network/if-up.d/iptablesload 
 
 sudo wget https://raw.github.com/andrewmichaelsmith/honeypot-setup-script/master/init/kippo -O /etc/init.d/kippo
 

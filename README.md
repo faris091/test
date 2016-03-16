@@ -18,7 +18,7 @@ Config file for sSMTP sendmail
       #mailhub=mail
       mailhub=smtp.gmail.com:587
 
-      AuthUser=gostfaris94@gmail.com
+      AuthUser=
       AuthPass=
 
       UseTLS=YES
@@ -29,7 +29,7 @@ Config file for sSMTP sendmail
       rewriteDomain=gmail.com
 
       #The full hostname
-      hostname=gostfaris94@gmail.com
+      hostname=
 
       #Are users allowed to set their own From: address?
       #YES - Allow the user to specify their own From: address

@@ -27,7 +27,7 @@ sudo sed -i 's:Port 22:Port 65534:g' /etc/ssh/sshd_config
 sudo service ssh reload
 
 sudo mkdir /opt/kippo/
-sudo git clone https://github.com/desaster/kippo.git /opt/kippo/
+sudo svn checkout http://kippo.googlecode.com/svn/trunk/ /opt/kippo/
 sudo cp /tmp/kippo.cfg /opt/kippo/
 
 sudo useradd -r -s /bin/false kippo

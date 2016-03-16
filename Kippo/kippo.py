@@ -27,9 +27,6 @@ sudo apt-get update &> /dev/null
 sudo apt-get -y install python-pip python-twisted python-dev iptables python-openssl
 sudo pip install netifaces
 
-python /tmp/iface-choice.py "$@"
-iface=$(<~/.honey_iface)
-
 sudo sed -i 's:Port 22:Port 65534:g' /etc/ssh/sshd_config
 sudo service ssh reload
 

@@ -22,7 +22,7 @@ then
 fi
 
 sudo apt-get update &> /dev/null
-sudo apt-get install python-pip python-twisted python-dev
+sudo apt-get -y install python-pip python-twisted python-dev
 sudo pip install netifaces
 
 sudo sed -i 's:Port 22:Port 65534:g' /etc/ssh/sshd_config

@@ -3,7 +3,7 @@ then
 	cp /honeypot-setup-script/templates/kippo.cfg.tmpl /tmp/kippo.cfg
 else
 	
-	sudo wget https://raw.github.com/andrewmichaelsmith/honeypot-setup-script/master/templates/kippo.cfg.tmpl -O /tmp/kippo.cfg
+	sudo wget https://raw.githubusercontent.com/faris091/Test/Kippo/Kippo/Template/kippo.cfg.tmpl -O /tmp/kippo.cfg
 fi
 
 if [ $(dpkg-query -W -f='${Status}' sudo 2>/dev/null | grep -c "ok installed") -eq 0 ]

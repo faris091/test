@@ -18,7 +18,9 @@ mailhub=smtp.gmail.com:587
 
 AuthUser=gostfaris94@gmail.com
 AuthPass=
+
 UseTLS=YES
+
 UseSTARTTLS=YES
 
  Where will the mail seem to come from?

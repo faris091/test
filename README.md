@@ -1,41 +1,43 @@
-#INSTALLING SMTP
+INSTALLING SMTP
+---------------------
 
-sudo apt-get install ssmtp
-cd /etc/ssmtp
-vi ssmtp.conf
+*sudo apt-get install ssmtp
+*cd /etc/ssmtp
+*vi ssmtp.conf
 
-#Config file for sSMTP sendmail
+Config file for sSMTP sendmail
+---------------------
 
-The person who gets all mail for userids < 1000
-Make this empty to disable rewriting.
-root=postmaster
+*#The person who gets all mail for userids < 1000
+*#Make this empty to disable rewriting.
+*root=postmaster
 
- The place where the mail goes. The actual machine name is required no
- MX records are consulted. Commonly mailhosts are named mail.domain.com
+*#The place where the mail goes. The actual machine name is required no
+*#MX records are consulted. Commonly mailhosts are named mail.domain.com
 
-mailhub=mail
-mailhub=smtp.gmail.com:587
+*#mailhub=mail
+*mailhub=smtp.gmail.com:587
 
-AuthUser=gostfaris94@gmail.com
-AuthPass=
+*AuthUser=gostfaris94@gmail.com
+*AuthPass=
 
-UseTLS=YES
+*UseTLS=YES
+*UseSTARTTLS=YES
 
-UseSTARTTLS=YES
+*#Where will the mail seem to come from?
+*#rewriteDomain=
+*rewriteDomain=gmail.com
 
- Where will the mail seem to come from?
-rewriteDomain=
-rewriteDomain=gmail.com
+*#The full hostname
+*hostname=gostfaris94@gmail.com
 
- The full hostname
-hostname=gostfaris94@gmail.com
+*#Are users allowed to set their own From: address?
+*#YES - Allow the user to specify their own From: address
+*#NO - Use the system generated From: address
+*FromLineOverride=YES
 
- Are users allowed to set their own From: address?
- YES - Allow the user to specify their own From: address
- NO - Use the system generated From: address
-FromLineOverride=YES
-
-#SENT EMAIL
+SENT EMAIL
+---------------------
 ssmtp [receipent email]
 
 #INSTALLING KIPPO

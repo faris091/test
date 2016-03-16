@@ -24,7 +24,7 @@ then
 fi
 
 sudo apt-get update &> /dev/null
-sudo apt-get -y install python-pip python-twisted python-dev iptables python-openssl
+sudo apt-get -y install python-pip python-twisted python-dev iptables python-openssl git
 sudo pip install netifaces
 
 sudo sed -i 's:Port 22:Port 65534:g' /etc/ssh/sshd_config

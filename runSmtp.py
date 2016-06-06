@@ -4,7 +4,7 @@ sudo rm -f ssmtp.conf
 sudo wget https://raw.githubusercontent.com/faris091/Test/Kippo/ssmtp.conf
 sudo sed -i 's:root=postmaster:root=gostfaris94@gmail.com:g' /etc/ssmtp/ssmtp.conf
 sudo sed -i 's:AuthUser=user:AuthUser=gostfaris94@gmail.com:g' /etc/ssmtp/ssmtp.conf
-sudo sed -i 's:AuthPass=pass:AuthPass=Najiha1:g' /etc/ssmtp/ssmtp.conf
+sudo sed -i 's:AuthPass=pass:AuthPass=password:g' /etc/ssmtp/ssmtp.conf
 sudo sed -i 's:rewriteDomain=:rewriteDomain=gmail.com:g' /etc/ssmtp/ssmtp.conf
 sudo sed -i 's:hostname=Ubuntu:hostname=gostfaris94@gmail.com:g' /etc/ssmtp/ssmtp.conf
 

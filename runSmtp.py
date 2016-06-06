@@ -1,4 +1,4 @@
-sudo apt-get ssmtp
+sudo apt-get install ssmtp
 cd /etc/ssmtp
 sudo rm -f ssmtp.conf
 sudo wget https://raw.githubusercontent.com/faris091/Test/Kippo/ssmtp.conf

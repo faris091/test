@@ -56,7 +56,7 @@ sudo echo 'exit 0' >> /etc/network/if-up.d/iptablesload
 
 sudo chmod +x /etc/network/if-up.d/iptablesload 
 
-sudo wget https://raw.githubusercontent.com/faris091/Test/Kippo/Kippo/init/kippo -O /etc/init.d/kippo
+sudo wget https://raw.github.com/andrewmichaelsmith/honeypot-setup-script/master/init/kippo -O /etc/init.d/kippo
 
 sudo chmod +x /etc/init.d/kippo
 

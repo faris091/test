@@ -21,6 +21,7 @@ sudo apt-get install -y python-chardet python-requests python-sqlalchemy python-
 sudo apt-get install -y python-beautifulsoup mongodb python-pip python-dev python-setuptools
 sudo apt-get install -y g++ git php5 php5-dev liblapack-dev gfortran libmysqlclient-dev
 sudo apt-get install -y libxml2-dev libxslt-dev
+sudo apt-get dist-upgrade -y
 sudo pip install --upgrade distribute
 
 cd /opt

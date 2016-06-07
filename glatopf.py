@@ -1,13 +1,5 @@
 sudo wget https://raw.githubusercontent.com/faris091/Test/Kippo/Kippo/scripts/iface-choice.py -O /tmp/iface-choice.py
 
-if [ -d "$script_dir" ];
-then
-	cp /honeypot-setup-script/templates/kippo.cfg.tmpl /tmp/kippo.cfg
-else
-	
-	sudo wget https://raw.githubusercontent.com/faris091/Test/Kippo/Kippo/Template/kippo.cfg.tmpl -O /tmp/kippo.cfg
-fi
-
 if [ $(dpkg-query -W -f='${Status}' sudo 2>/dev/null | grep -c "ok installed") -eq 0 ]
 then
   #sudo package is not currently installed on this box
@@ -40,6 +32,9 @@ cd /opt
 sudo mkdir myhoneypot
 cd myhoneypot
 sudo glastopf-runner
+
+sudo service apache2 stop
+sudo sed -i 's:host = 0.0.0.0:host = YourIP:g' /opt/myhoneypot/glastopf.cfg
 
 cd /opt/glastopf/
 python /usr/local/bin/glastopf-runner > /dev/null 2>&1 &

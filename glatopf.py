@@ -35,7 +35,7 @@ cd myhoneypot
 sudo glastopf-runner
 
 sudo service apache2 stop
-sudo sed -i 's:host = 0.0.0.0:host = YourIP:g' /opt/myhoneypot/glastopf.cfg
+sudo sed -i 's:host = 0.0.0.0:host = 172.212.101.14:g' /opt/myhoneypot/glastopf.cfg
 
 cd /opt/glastopf/
 python /usr/local/bin/glastopf-runner > /dev/null 2>&1 &
